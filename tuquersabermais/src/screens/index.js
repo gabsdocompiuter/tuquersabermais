@@ -10,13 +10,13 @@ import {
 const screens = [
     {
         key: 0,
-        description: 'Playlist',
+        description: 'Vídeos',
         active: true
     },
 
     {
         key: 1,
-        description: 'About',
+        description: 'Sobre',
         active: false
     },
 ]
@@ -50,7 +50,7 @@ export default class Preload extends Component {
     }
 
     changeTab(tab){
-        this.viewPager.setPage(tab);
+        // this.viewPager.setPage(tab);
         this.setState({page : tab});
     }
 
@@ -98,6 +98,8 @@ const styles = StyleSheet.create({
 
     desc: {
         marginLeft: 15,
+
+        alignItems: 'center',
     },
 
     title: {
@@ -121,7 +123,7 @@ const styles = StyleSheet.create({
     tab: {
         color: '#FFF',
         fontFamily: 'sans-serif-light',
-        fontSize: 16,
+        fontSize: 22,
     },
 
     viewPager: {
