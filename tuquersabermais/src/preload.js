@@ -10,6 +10,16 @@ export default class Preload extends Component {
 
     constructor(props){
         super(props);
+        this.state = {
+            logoSize: '20',
+        };
+
+        setInterval(() => {
+            let s = this.state;
+            s.logoSize++;
+
+            this.setState(s);
+        }, 30);
 
         setTimeout(() => {
             this.props.navigation.navigate('Index');
@@ -21,7 +31,10 @@ export default class Preload extends Component {
             <View style={styles.container}>
                 <Image
                     source={require('./assets/logo.png')}
-                    style={styles.logo}
+                    style={{
+                        ...styles.logo,
+                        width: (this.state.logoSize + '%')
+                    }}
                 />
             </View>
         );
@@ -40,6 +53,5 @@ const styles = StyleSheet.create({
 
     logo: {
         resizeMode: 'center',
-        width: '50%',
     },
 });
