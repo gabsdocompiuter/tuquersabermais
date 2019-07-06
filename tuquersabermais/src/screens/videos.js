@@ -3,7 +3,8 @@ import {
     Text,
     View,
     Image,
-    StyleSheet
+    StyleSheet,
+    ScrollView
 } from 'react-native';
 
 export default class Videos extends Component {
@@ -17,44 +18,113 @@ export default class Videos extends Component {
 
     render(){
         return(
+            <ScrollView>
             <View style={styles.container}>
             
-
-
-                <View style={styles.video}>
-                    <Image style={styles.imagemVideo} source={require('../assets/Koala.jpg')} />
+                <View style={styles.caixavideo}>
+                    <View style={styles.caixavideoimagem}>
+                        <Image style={styles.imagemVideo} source={require('../assets/Koala.jpg')} />
+                    </View>
                     
+                    <View style={styles.resumovideo}>
+                        <Text style={styles.titulovideo}>Resumo Redes de Computadores</Text>
 
-
-                    <View>
-                        <Text style={styles.titulo}>Resumo Redes de Computadores</Text>
-
+                        <Text style={styles.descricaovideo}>Resumo Redes de Computadores</Text>
 
 
                     </View>
-
-
-
                 </View>
 
 
-                <View style={styles.video}>
-                    <Text>Resumo Redes de Computadores</Text>
-                </View>
-           
+                <View style={styles.caixavideo}>
+                    <View style={styles.caixavideoimagem}>
+                        <Image style={styles.imagemVideo} source={require('../assets/Koala.jpg')} />
+                    </View>
+                    
+                    <View style={styles.resumovideo}>
+                        <Text style={styles.titulovideo}>Resumo Redes de Computadores</Text>
+                        <Text style={styles.descricaovideo}>Resumo Redes de Computadores</Text>
 
-                <View style={styles.video}>
-                    <Text>Resumo Redes de Computadores</Text>
-                </View>
-           
-                <View style={styles.video}>
-                    <Text>Resumo Redes de Computadores</Text>
-                </View>
-           
+                
 
+                    </View>
+                </View>
+
+
+                <View style={styles.caixavideo}>
+                    <View style={styles.caixavideoimagem}>
+                        <Image style={styles.imagemVideo} source={require('../assets/Koala.jpg')} />
+                    </View>
+                    
+                    <View style={styles.resumovideo}>
+                        <Text style={styles.titulovideo}>Resumo Redes de Computadores</Text>
+                        <Text style={styles.descricaovideo}>Resumo Redes de Computadores</Text>
+
+                
+
+                    </View>
+                </View>
+
+
+                <View style={styles.caixavideo}>
+                    <View style={styles.caixavideoimagem}>
+                        <Image style={styles.imagemVideo} source={require('../assets/Koala.jpg')} />
+                    </View>
+                    
+                    <View style={styles.resumovideo}>
+                        <Text style={styles.titulovideo}>Resumo Redes de Computadores</Text>
+                        <Text style={styles.descricaovideo}>Resumo Redes de Computadores</Text>
+
+                
+
+                    </View>
+                </View>
+
+                <View style={styles.caixavideo}>
+                    <View style={styles.caixavideoimagem}>
+                        <Image style={styles.imagemVideo} source={require('../assets/Koala.jpg')} />
+                    </View>
+                    
+                    <View style={styles.resumovideo}>
+                        <Text style={styles.titulovideo}>Resumo Redes de Computadores</Text>
+                        <Text style={styles.descricaovideo}>Resumo Redes de Computadores</Text>
+
+                
+
+                    </View>
+                </View>
+
+                <View style={styles.caixavideo}>
+                    <View style={styles.caixavideoimagem}>
+                        <Image style={styles.imagemVideo} source={require('../assets/Koala.jpg')} />
+                    </View>
+                    
+                    <View style={styles.resumovideo}>
+                        <Text style={styles.titulovideo}>Resumo Redes de Computadores</Text>
+                        <Text style={styles.descricaovideo}>Resumo Redes de Computadores</Text>
+
+                
+
+                    </View>
+                </View>
+
+                <View style={styles.caixavideo}>
+                    <View style={styles.caixavideoimagem}>
+                        <Image style={styles.imagemVideo} source={require('../assets/Koala.jpg')} />
+                    </View>
+                    
+                    <View style={styles.resumovideo}>
+                        <Text style={styles.titulovideo}>Resumo Redes de Computadores</Text>
+                        <Text style={styles.descricaovideo}>Resumo Redes de Computadores</Text>
+
+                
+
+                    </View>
+                </View>
 
 
             </View>
+            </ScrollView>
         );
     }
 }
@@ -65,13 +135,17 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'stretch'
     },
-    video: {
+    caixavideo: {
         height: 125,
         backgroundColor: "#000",
         marginLeft:10,
         marginRight:10,
         borderRadius: 8,
-        marginBottom: 10
+        marginBottom: 10,
+        flexWrap: 'wrap'
+    },
+    caixavideoimagem: {
+        width: 150
     },
     imagemVideo: {
         width: 140,
@@ -79,11 +153,21 @@ const styles = StyleSheet.create({
         marginTop:10,
         marginLeft:10
     },
-    titulo: {
+    resumovideo: {
+        width: 230,
+    },
+
+    titulovideo: {
         color: "#fff",
+        fontSize: 15,
+        fontWeight:"bold",
         width: 140,
-        height:105,
         marginTop:10,
         marginLeft:10
+    },
+    descricaovideo: {
+        fontSize: 15,
+        marginLeft:10,
+        color: "#fff"
     },
 });
