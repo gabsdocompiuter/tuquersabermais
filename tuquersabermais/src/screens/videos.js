@@ -22,16 +22,33 @@ export default class Videos extends Component {
 
 
                 <View style={styles.video}>
-                    <Image style={styles.logo} source={require('../assets/logo.png')} />
+                    <Image style={styles.imagemVideo} source={require('../assets/Koala.jpg')} />
                     
-                    <Text>teste</Text>
 
+
+                    <View>
+                        <Text style={styles.titulo}>Resumo Redes de Computadores</Text>
+
+
+
+                    </View>
 
 
 
                 </View>
+
+
                 <View style={styles.video}>
-                    <Text>teste</Text>
+                    <Text>Resumo Redes de Computadores</Text>
+                </View>
+           
+
+                <View style={styles.video}>
+                    <Text>Resumo Redes de Computadores</Text>
+                </View>
+           
+                <View style={styles.video}>
+                    <Text>Resumo Redes de Computadores</Text>
                 </View>
            
 
@@ -49,17 +66,24 @@ const styles = StyleSheet.create({
         alignItems: 'stretch'
     },
     video: {
-        height: 150,
+        height: 125,
         backgroundColor: "#000",
         marginLeft:10,
         marginRight:10,
         borderRadius: 8,
         marginBottom: 10
     },
-    
-
-
-    logo: {
-        resizeMode: 'center',
+    imagemVideo: {
+        width: 140,
+        height:105,
+        marginTop:10,
+        marginLeft:10
+    },
+    titulo: {
+        color: "#fff",
+        width: 140,
+        height:105,
+        marginTop:10,
+        marginLeft:10
     },
 });
