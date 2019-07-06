@@ -7,6 +7,12 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
+
+import ViewPager from "@react-native-community/viewpager";
+import Videos from './videos';
+import Sobre from './about';
+
+
 const screens = [
     {
         key: 0,
@@ -50,7 +56,7 @@ export default class Preload extends Component {
     }
 
     changeTab(tab){
-        // this.viewPager.setPage(tab);
+        this.viewPager.setPage(tab);
         this.setState({page : tab});
     }
 
@@ -70,6 +76,20 @@ export default class Preload extends Component {
                         </View>
                     </View>
                 </View>
+                <ViewPager
+                    style={styles.viewPager}
+                    initialPage={0}
+                    ref={viewPager => this.viewPager = viewPager}
+                    onPageSelected={e => this.setState({page: e.nativeEvent.position})}
+                >
+                    <View key="1">
+                        <Videos/>
+                    </View>
+
+                    <View key="2">
+                        <Sobre/>
+                    </View>
+                </ViewPager>
 
                 
             </View>
@@ -95,6 +115,9 @@ const styles = StyleSheet.create({
         width: 100,
         height: 100,
     },
+    viewPager: {
+        flex: 1
+      },
 
     desc: {
         marginLeft: 15,
