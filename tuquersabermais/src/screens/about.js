@@ -1,17 +1,45 @@
 import React, { Component } from 'react';
-import { AppRegistry, View, Image } from 'react-native';
+import { View, Image } from 'react-native';
 
-export default class DisplayAnImage extends Component {
-  render() {
-    return (
-      <View>
-        <Image
-          source={require('../assets/logo.png')}
-        />
-      </View>
-    );
-  }
+export default class Sobre extends Component {
+
+    constructor(props){
+        super(props);
+        this.state = {
+            logoSize: '20',
+        };
+    }
+
+    render(){
+        return(
+            <View style={styles.container}>
+               <Text>Sobre</Text>
+               <Image
+                source={require('../assets/logo.png')}
+              />
+
+
+
+
+
+
+
+            </View>
+        );
+    }
 }
 
-// skip this line if using Create React Native App
-AppRegistry.registerComponent('DisplayAnImage', () => DisplayAnImage);
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+
+        backgroundColor: '#575757'
+    },
+
+    logo: {
+        resizeMode: 'center',
+    },
+});
