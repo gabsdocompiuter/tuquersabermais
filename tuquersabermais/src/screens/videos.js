@@ -18,12 +18,22 @@ export default class Videos extends Component {
     render(){
         return(
             <View style={styles.container}>
-               <Text>Vídeo</Text>
+            
+
+
+                <View style={styles.video}>
+                    <Image style={styles.logo} source={require('../assets/logo.png')} />
+                    
+                    <Text>teste</Text>
 
 
 
 
-
+                </View>
+                <View style={styles.video}>
+                    <Text>teste</Text>
+                </View>
+           
 
 
 
@@ -31,16 +41,23 @@ export default class Videos extends Component {
         );
     }
 }
-
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        alignItems: 'center',
+        flexDirection: 'column',
         justifyContent: 'center',
-
-        backgroundColor: '#575757'
+        alignItems: 'stretch'
     },
+    video: {
+        height: 150,
+        backgroundColor: "#000",
+        marginLeft:10,
+        marginRight:10,
+        borderRadius: 8,
+        marginBottom: 10
+    },
+    
+
 
     logo: {
         resizeMode: 'center',
