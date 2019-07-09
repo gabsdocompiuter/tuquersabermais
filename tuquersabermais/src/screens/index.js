@@ -7,8 +7,8 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-
 import ViewPager from "@react-native-community/viewpager";
+
 import Videos from './videos';
 import Sobre from './about';
 
