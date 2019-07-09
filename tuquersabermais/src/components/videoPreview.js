@@ -1,24 +1,30 @@
-    import React, { Component } from 'react';
+import React, { Component } from 'react';
+
 import {
     View,
     Image,
     Text,
-    StyleSheet
+    StyleSheet,
+    TouchableOpacity,
 } from 'react-native';
 
 export default class VideoPreview extends Component {
     render(){
         return(
-            <View style={styles.caixaVideo}>
-                <View style={styles.caixaVideoImagem}>
-                    <Image style={styles.imagemVideo} source={{uri: this.props.data.thumbnail}} />
+            <TouchableOpacity
+                onPress={() => this.props.onPress(this.props.data.url)}
+            >
+                <View style={styles.caixaVideo}>
+                    <View style={styles.caixaVideoImagem}>
+                        <Image style={styles.imagemVideo} source={{uri: this.props.data.thumbnail}} />
+                    </View>
+                        
+                    <View style={styles.resumoVideo}>
+                        <Text style={styles.tituloVideo}>{this.props.data.title}</Text>
+                        <Text style={styles.descricaoVideo}>{this.props.data.description}</Text>
+                    </View>
                 </View>
-                    
-                <View style={styles.resumoVideo}>
-                    <Text style={styles.tituloVideo}>{this.props.data.title}</Text>
-                    <Text style={styles.descricaoVideo}>{this.props.data.description}</Text>
-                </View>
-            </View>
+            </TouchableOpacity>
         );
     }
 }
