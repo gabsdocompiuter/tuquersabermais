@@ -15,7 +15,7 @@ export default class Sobre extends Component {
             <View style={styles.container}>
                
                <Image style={styles.logo}
-                source={require('../assets/img2.png')}
+                source={require('../assets/wagner.jpg')}
               />
 
             <View>

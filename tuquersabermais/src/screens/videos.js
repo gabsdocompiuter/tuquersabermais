@@ -40,7 +40,7 @@ export default class Videos extends Component {
                 renderItem={({item}) => 
                     <VideoPreview
                         data={item}
-                        // onPress={(item) => this.openVideo(item)}
+                        //onPress={(item) => this.openVideo(item)}
                     />
                 }
                 keyExtractor={(item, index) => item.id}
