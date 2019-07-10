@@ -4,9 +4,9 @@ import Preload from './preload';
 import Index from './screens/';
 
 const AppNavigator = createStackNavigator({
-    Preload: {
-        screen: Preload
-    },
+    // Preload: {
+    //     screen: Preload
+    // },
     
     Index: {
         screen: Index

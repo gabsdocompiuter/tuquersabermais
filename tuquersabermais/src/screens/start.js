@@ -1,6 +1,4 @@
-
 import React, { Component } from 'react';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import {
     Text,
     View,
@@ -9,26 +7,58 @@ import {
     TouchableOpacity,
 } from 'react-native';
 
-import { createStackNavigator, createAppContainer } from 'react-navigation';
+import ViewPager from "@react-native-community/viewpager";
+
+import Videos from './videos';
+import Sobre from './about';
 
 
-import Start from './start';
-import PlayVideo from './playVideo';
-
-const AppNavigator = createStackNavigator({
-    Start: {
-        screen: Start
+const screens = [
+    {
+        key: 0,
+        description: 'Vídeos',
+        active: true
     },
-    
-    PlayVideo: {
-        screen: PlayVideo
+
+    {
+        key: 1,
+        description: 'Sobre',
+        active: false
     },
-    
-}, {
-    defaultNavigationOptions: {
-        header: null
+]
+
+export default class Start extends Component {
+
+    constructor(props){
+        super(props);
+
+        this.state = {
+            page: 0,
+        }
     }
-});
+
+    screensTab(){
+        return screens.map((tab) =>{
+            return (
+                <View key={tab.key}>
+                    <TouchableOpacity style={styles.tabItem} onPress={() => this.changeTab(tab.key)}>
+                        <Text style={styles.tab}>{tab.description}</Text>
+                        <View
+                            style={{
+                                height: 1,
+                                backgroundColor: (this.state.page == tab.key ? '#FFF' : 'transparent')
+                            }}
+                        />
+                    </TouchableOpacity>
+                </View>    
+            );
+        })
+    }
+
+    changeTab(tab){
+        this.viewPager.setPage(tab);
+        this.setState({page : tab});
+    }
 
     render(){
         return(
@@ -60,13 +90,6 @@ const AppNavigator = createStackNavigator({
                         <Sobre/>
                     </View>
                 </ViewPager>
-
-                <View style={styles.footer}>
-                    <Text style={styles.footerTexto}>Desenvolvido com </Text> 
-                    <Icon name="heart" size={18} color="red" /> 
-                    <Text style={styles.footerTexto}> por Os guri</Text>
-                    
-                </View>
 
                 
             </View>
@@ -129,21 +152,4 @@ const styles = StyleSheet.create({
     viewPager: {
         flex: 1,
     },
-
-    footer: {
-        
-        alignSelf: 'flex-end',
-        bottom: 0,
-        width: '100%',
-        alignItems: 'center',
-        paddingTop: 10,
-        paddingBottom: 10,
-        flexDirection: "row",
-        justifyContent: 'center'
-        
-    },
-
-    footerTexto: {
-        color: '#FFFFFF'
-    }
 });

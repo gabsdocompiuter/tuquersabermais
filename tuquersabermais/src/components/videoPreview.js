@@ -1,66 +1,91 @@
-    import React, { Component } from 'react';
+import React, { Component } from 'react';
+
 import {
     View,
     Image,
     Text,
-    StyleSheet
+    StyleSheet,
+    TouchableOpacity,
 } from 'react-native';
 
 export default class VideoPreview extends Component {
     render(){
         return(
-            <View style={styles.caixaVideo}>
-                <View style={styles.caixaVideoImagem}>
+            <TouchableOpacity
+                onPress={() => this.props.onPress(this.props.data.url)}
+                style={styles.container}
+            >
+                <View style={styles.caixaVideo}>
                     <Image style={styles.imagemVideo} source={{uri: this.props.data.thumbnail}} />
+                        
+                    <View style={styles.resumoVideo}>
+                        <Text style={styles.tituloVideo}>{cutText(this.props.data.title, 45)}</Text>
+                        <Text style={styles.descricaoVideo}>{cutText(this.props.data.description, 60)}</Text>
+                    </View>
                 </View>
-                    
-                <View style={styles.resumoVideo}>
-                    <Text style={styles.tituloVideo}>{this.props.data.title}</Text>
-                    <Text style={styles.descricaoVideo}>{this.props.data.description}</Text>
-                </View>
-            </View>
+            </TouchableOpacity>
         );
     }
 }
 
+function cutText(text, size){
+    if (text.length <= size){
+        return text;
+    }
+
+    size = size - 3;
+    if(text.substring(size - 1, size) == ' '){
+        size -= 1;
+    }
+
+    let newText = text.substring(0, size - 3);
+    return `${newText}...`;
+}
+
 const styles = StyleSheet.create({
-    caixaVideo: {
+    container: {
         height: 125,
-        backgroundColor: "#000",
-        marginLeft:10,
-        marginRight:10,
-        borderRadius: 8,
-        marginBottom: 10,
-        flexWrap: 'wrap'
+        width: '90%',
+
+        marginLeft: '5%',
     },
 
-    caixaVideoImagem: {
-        width: 150
+    caixaVideo: {
+        flex: 1,
+
+        backgroundColor: "#303030",
+        borderRadius: 10,
+        marginBottom: 10,
+        
+        flexDirection: 'row'
     },
 
     imagemVideo: {
-        width: 140,
-        height:105,
-        marginTop:10,
-        marginLeft:10
+        width: '30%',
+        resizeMode: 'center',
+        marginTop: 10,
+        marginLeft: 10
     },
 
     resumoVideo: {
-        width: 230,
+        width: '60%',
+        justifyContent: 'center',
+
+        marginLeft: 10,
     },
 
     tituloVideo: {
         color: "#fff",
         fontSize: 15,
-        fontWeight:"bold",
-        width: 140,
-        marginTop:10,
-        marginLeft:10
+        fontWeight: "bold",
+        marginTop: 10,
     },
 
     descricaoVideo: {
-        fontSize: 15,
-        marginLeft:10,
-        color: "#fff"
+        fontSize: 13,
+        color: "#fff",
+
+        flexDirection: 'row',
+        flexWrap: "wrap"
     },
 });
