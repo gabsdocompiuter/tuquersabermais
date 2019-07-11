@@ -16,6 +16,7 @@ import Start from './start';
 import PlayVideo from './playVideo';
 import Footer from './footer';
 
+
 const AppNavigator = createStackNavigator({
     Start: {
         screen: Start
