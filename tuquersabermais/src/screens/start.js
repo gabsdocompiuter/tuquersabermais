@@ -99,13 +99,6 @@ export default class Start extends Component {
                     
                 </View>
 
-                <View style={styles.footer}>
-                    <Text style={styles.footerTexto}>Desenvolvido com </Text> 
-                    <Icon name="heart" size={18} color="red" /> 
-                    <Text style={styles.footerTexto}> por Os guri</Text>
-                    
-                </View>
-
             </View>
         );
     }
