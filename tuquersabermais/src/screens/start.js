@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import {
     Text,
     View,
@@ -90,6 +91,13 @@ export default class Start extends Component {
                         <Sobre/>
                     </View>
                 </ViewPager>
+                
+                <View style={styles.footer}>
+                    <Text style={styles.footerTexto}>Desenvolvido com </Text> 
+                    <Icon name="heart" size={18} color="red" /> 
+                    <Text style={styles.footerTexto}> por Os guri</Text>
+                    
+                </View>
 
                 
             </View>
@@ -152,4 +160,23 @@ const styles = StyleSheet.create({
     viewPager: {
         flex: 1,
     },
+
+
+
+    footer: {
+        
+        alignSelf: 'flex-end',
+        bottom: 0,
+        width: '100%',
+        alignItems: 'center',
+        paddingTop: 10,
+        paddingBottom: 10,
+        flexDirection: "row",
+        justifyContent: 'center'
+        
+    },
+
+    footerTexto: {
+        color: '#FFFFFF'
+    }
 });
