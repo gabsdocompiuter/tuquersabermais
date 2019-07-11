@@ -6,13 +6,14 @@ import {
     Text,
     StyleSheet,
     TouchableOpacity,
+    Linking
 } from 'react-native';
 
 export default class VideoPreview extends Component {
     render(){
         return(
             <TouchableOpacity
-                onPress={() => this.props.onPress(this.props.data.url)}
+                onPress={() => Linking.openURL(this.props.data.url)}
                 style={styles.container}
             >
                 <View style={styles.caixaVideo}>

@@ -4,6 +4,7 @@ import {
     StyleSheet,
 } from 'react-native';
 
+
 import VideoPreview from '../components/videoPreview';
 
 const endPoint = 'https://monteiro.dev/youtube-api/UC82Y_rFr8H6WZmbUKvqc8Pw';
@@ -30,7 +31,7 @@ export default class Videos extends Component {
     }
 
     openVideo(video){
-        alert(video);
+        //alert(video);
     }
 
     render(){
@@ -41,12 +42,14 @@ export default class Videos extends Component {
                     <VideoPreview
                         data={item}
 
-                        //onPress={(item) => this.openVideo(item)}
+                        onPress={(item) => this.openVideo(item)}
 
                     />
                 }
                 keyExtractor={(item, index) => item.id}
             />
+            
+            
         );
     }
 }

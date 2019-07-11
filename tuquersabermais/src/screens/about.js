@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { View, Image, StyleSheet, Text } from 'react-native';
 
+
+
 export default class Sobre extends Component {
 
     constructor(props){
@@ -13,29 +15,20 @@ export default class Sobre extends Component {
     render(){
         return(
             <View style={styles.container}>
-               
-               <Image style={styles.logo}
-                source={require('../assets/wagner.jpg')}
-              />
-
-            <View>
-              <Text style={styles.titulo}>Wagner Gadea Lorenz</Text>
-              
-              <Text style={styles.descricao}>Professor do Curso de Sistemas de Informação da ULBRA - Campus Cachoeira do Sul. 
-                  Engenheiro de Computação pela 
-                  Universidade Federal do Rio Grande - 
-                  FURG, Brasil (2011). Mestre em Ciência da Computação pela 
-                  Universidade Federal de Santa Maria (UFSM), na linha de 
-                  pesquisa de Computação Aplicada (2014). 
-                  Licenciado em Programa Especial de Graduação de
-                   Formação de Professores para a Educação Profissional,
-                    também pela UFSM (2014). Tem experiência na área de 
-                    Engenharia de Software e Mineração de Dados.</Text>
-            </View>
-
-        
-
-
+               <Image style={styles.logo} source={require('../assets/wagner.jpg')}/>
+                <View>
+                <Text style={styles.titulo}>Wagner Gadea Lorenz</Text>
+                <Text style={styles.descricao}>Professor do Curso de Sistemas de Informação da ULBRA - Campus Cachoeira do Sul. 
+                    Engenheiro de Computação pela 
+                    Universidade Federal do Rio Grande - 
+                    FURG, Brasil (2011). Mestre em Ciência da Computação pela 
+                    Universidade Federal de Santa Maria (UFSM), na linha de 
+                    pesquisa de Computação Aplicada (2014). 
+                    Licenciado em Programa Especial de Graduação de
+                    Formação de Professores para a Educação Profissional,
+                        também pela UFSM (2014). Tem experiência na área de 
+                        Engenharia de Software e Mineração de Dados.</Text>
+                </View>
             </View>
         );
     }
